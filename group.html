@@ -1,4 +1,206 @@
-<!-- ===== FORMAT & PRICE SECTION ===== -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Где во всём этом настоящая Я? — Психотерапевтическая группа для женщин</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Lora & Nunito Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600&display=swap" rel="stylesheet">
+
+    <!-- Alpine.js для интерактивности -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #FBF9F6; /* Теплый, почти белый фон */
+            color: #57534E; /* Мягкий, темно-серый текст */
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: #44403C; /* Камень 700 */
+        }
+        .bg-soft-beige { background-color: #F5F1EB; }
+        .bg-gentle-green { background-color: #A3B8A2; } /* Нежный зеленый для кнопок */
+        .text-accent-rose { color: #D6A3B1; } /* Акцентный розовый */
+        .border-gentle-green { border-color: #A3B8A2; }
+        [x-cloak] { display: none !important; }
+
+        /* Анимации при скролле */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body x-data>
+
+    <!-- ===== HEADER ===== -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-semibold">Где во всём этом <span class="text-accent-rose">настоящая Я?</span></h1>
+            <nav class="hidden md:flex space-x-6 text-sm">
+                <a href="#for-whom" class="hover:text-accent-rose transition-colors">Для кого</a>
+                <a href="#results" class="hover:text-accent-rose transition-colors">Что даст группа</a>
+                <a href="#about-me" class="hover:text-accent-rose transition-colors">Ведущая</a>
+                <a href="#format" class="hover:text-accent-rose transition-colors">Формат</a>
+            </nav>
+            <a href="#free-call" class="hidden md:block bg-gentle-green text-white font-semibold px-5 py-2 rounded-full hover:bg-opacity-90 transition-all duration-300">Бесплатная встреча</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="pt-32 pb-20 relative overflow-hidden">
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+                <div class="text-center lg:text-left z-10">
+                    <h2 class="text-4xl lg:text-5xl font-bold leading-tight">Вернуться к себе. Мягко. Бережно. В кругу понимания.</h2>
+                    <p class="mt-6 text-lg text-stone-600">Это пространство для женщин, которые устали быть сильными, удобными и правильными. Для тех, кто хочет остановиться, выдохнуть и услышать свой собственный голос в тишине.</p>
+                    <a href="#free-call" class="mt-8 inline-block bg-gentle-green text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+                        Записаться на 15-минутную встречу-знакомство (бесплатно)
+                    </a>
+                </div>
+                <div class="relative h-96 lg:h-full">
+                    <img src="https://images.unsplash.com/photo-1541535650826-17c345b13813?q=80&w=1964&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x700/F5F1EB/D6A3B1?text=🌿'" alt="[Абстрактное изображение женщины в гармонии с природой]" class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-80">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOR WHOM SECTION ===== -->
+        <section id="for-whom" class="py-20 bg-soft-beige" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl lg:text-4xl font-bold">🌿 Для кого эта программа?</h2>
+                    <p class="mt-4 text-lg text-stone-600">Если что-то из этого отзывается в вас — это пространство может стать вашим местом силы.</p>
+                </div>
+                <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm">
+                        <p>Для женщин, которые живут в постоянной включённости в заботу о других, но теряют контакт с собой.</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm">
+                        <p>Для тех, кто чувствует усталость, тревожность и раздражение, не понимая, куда исчезает энергия.</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm">
+                        <p>Для тех, у кого всё внешне правильно, но в глубине — ощущение одиночества и внутренней пустоты.</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm">
+                        <p>Для мам, которые боятся передать тревогу ребёнку, хотя стараются быть лучшими.</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm">
+                        <p>Для эмигранток, потерявших ощущение “своего” и “себя” в новой среде.</p>
+                    </div>
+                     <!-- Item -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm">
+                        <p>Для женщин в переходных состояниях, которые понимают: «что-то надо менять, но что именно — неясно».</p>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center text-stone-600 italic">
+                    <p>Это не обязательно “плохой период” — иногда всё внешне нормально, но внутри уже давно тишина или крик.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA FORM 1 ===== -->
+        <section id="cta-1" class="py-16 bg-white" x-data="{ submitted: false }">
+            <div class="container mx-auto px-6 text-center max-w-2xl">
+                <div x-show="!submitted">
+                    <h3 class="text-2xl font-bold">Узнайте больше о группе</h3>
+                    <p class="mt-2 text-stone-600">Оставьте свои контакты, и мы свяжемся с вами, чтобы рассказать подробности, ответить на вопросы и помочь понять, подходит ли вам этот формат.</p>
+                    <form @submit.prevent="submitted = true" class="mt-6 flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="text" placeholder="Ваше имя" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none">
+                        <input type="text" placeholder="Ваш Telegram (@username)" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none">
+                        <button type="submit" class="bg-gentle-green text-white font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors">Отправить</button>
+                    </form>
+                </div>
+                <div x-show="submitted" x-cloak class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg">
+                    <p class="font-bold">Спасибо!</p>
+                    <p>Мы получили вашу заявку и скоро свяжемся с вами в Telegram.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== RESULTS SECTION ===== -->
+        <section id="results" class="py-20 bg-soft-beige" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl lg:text-4xl font-bold">🌱 Что даёт участие в группе?</h2>
+                        <ul class="mt-6 space-y-4 text-lg text-stone-700">
+                            <li class="flex items-start"><span class="text-gentle-green mr-3 mt-1">✔</span><span>Пространство, где тебя не оценивают, не учат и не торопят.</span></li>
+                            <li class="flex items-start"><span class="text-gentle-green mr-3 mt-1">✔</span><span>Возможность почувствовать себя — без давления и роли “надо”.</span></li>
+                            <li class="flex items-start"><span class="text-gentle-green mr-3 mt-1">✔</span><span>Поддержку и мягкий контакт с другими женщинами.</span></li>
+                            <li class="flex items-start"><span class="text-gentle-green mr-3 mt-1">✔</span><span>Инструменты для возвращения к себе: образы, телесность, рефлексия.</span></li>
+                            <li class="flex items-start"><span class="text-gentle-green mr-3 mt-1">✔</span><span>Ощущение внутренней опоры, а не внешней.</span></li>
+                            <li class="flex items-start"><span class="text-gentle-green mr-3 mt-1">✔</span><span>Тёплое знание: “Со мной всё в порядке. Мне просто было больно”.</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1502228552837-a72240091b61?q=80&w=1936&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/500x600/F5F1EB/D6A3B1?text=?'" alt="[Женщина, обретающая спокойствие]" class="rounded-3xl shadow-lg w-full max-w-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FREE CALL SECTION ===== -->
+        <section id="free-call" class="py-20 bg-white" x-data="{ submitted: false }">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 class="text-3xl lg:text-4xl font-bold">Познакомьтесь с ведущей и группой</h2>
+                <p class="mt-4 text-lg text-stone-600">Первый шаг — это доверие. Поэтому я приглашаю вас на бесплатную 15-минутную встречу-знакомство. Мы поговорим, вы сможете задать любые вопросы и почувствовать, подходит ли вам моё бережное поле. Это ни к чему не обязывает.</p>
+                
+                <div class="mt-8 max-w-lg mx-auto" x-show="!submitted">
+                     <form @submit.prevent="submitted = true" class="space-y-4">
+                        <div>
+                            <label for="name-call" class="sr-only">Имя</label>
+                            <input id="name-call" type="text" placeholder="Ваше имя" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none">
+                        </div>
+                        <div>
+                           <label for="tg-call" class="sr-only">Telegram</label>
+                           <input id="tg-call" type="text" placeholder="Ваш Telegram (@username)" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none">
+                        </div>
+                        <button type="submit" class="w-full bg-gentle-green text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">Записаться на звонок-знакомство</button>
+                    </form>
+                </div>
+                 <div x-show="submitted" x-cloak class="mt-8 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg max-w-lg mx-auto">
+                    <p class="font-bold">Прекрасно!</p>
+                    <p>Спасибо за ваше доверие. Я свяжусь с вами в Telegram, чтобы договориться об удобном времени для звонка.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== ABOUT ME SECTION ===== -->
+        <section id="about-me" class="py-20 bg-soft-beige" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-3 gap-10 items-center">
+                    <div class="lg:col-span-1 flex justify-center">
+                        <img src="https://i.ibb.co/L5kL9b4/photo-2025-06-11-17-37-50.jpg" alt="[Портрет ведущей группы]" class="rounded-full w-64 h-64 object-cover shadow-xl">
+                    </div>
+                    <div class="lg:col-span-2">
+                        <h2 class="text-3xl font-bold">Ваша ведущая и проводник</h2>
+                        <p class="mt-4 text-stone-700">Здравствуйте! Я — [Имя ведущей], дипломированный психолог и игропрактик. Уже 5 лет я помогаю женщинам находить путь к себе через мягкие, творческие и телесные практики.</p>
+                        <p class="mt-4 text-stone-700">Моя задача — не "чинить" вас, а создать безопасное и тёплое пространство, где вы сможете сами услышать свою душу, найти свои опоры и принять себя — любую. Я верю, что в каждой из нас есть вся необходимая мудрость, нужно лишь создать тишину, чтобы её услышать.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FORMAT & PRICE SECTION ===== -->
         <section id="format" class="py-20 bg-white" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
             <div class="container mx-auto px-6">
                  <div class="text-center max-w-3xl mx-auto">
@@ -62,4 +264,3 @@
     </script>
 </body>
 </html>
-
