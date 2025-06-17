@@ -58,7 +58,21 @@
                 <a href="#format" class="hover:text-accent-rose transition-colors">Формат</a>
             </nav>
             <a href="#free-call" class="hidden md:block bg-gentle-green text-white font-semibold px-5 py-2 rounded-full hover:bg-opacity-90 transition-all duration-300">Бесплатная встреча</a>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-stone-600 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-gentle-green">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
+        <!-- Mobile menu -->
+        <nav id="mobile-menu" class="md:hidden hidden bg-white shadow-md py-2">
+            <a href="#for-whom" class="block px-6 py-2 text-sm text-stone-700 hover:bg-stone-50 hover:text-accent-rose transition-colors">Для кого</a>
+            <a href="#results" class="block px-6 py-2 text-sm text-stone-700 hover:bg-stone-50 hover:text-accent-rose transition-colors">Что даст группа</a>
+            <a href="#about-me" class="block px-6 py-2 text-sm text-stone-700 hover:bg-stone-50 hover:text-accent-rose transition-colors">Ведущая</a>
+            <a href="#format" class="block px-6 py-2 text-sm text-stone-700 hover:bg-stone-50 hover:text-accent-rose transition-colors">Формат</a>
+            <a href="#free-call" class="block px-6 py-3 text-center text-sm bg-gentle-green text-white font-semibold mx-4 my-2 rounded-full hover:bg-opacity-90 transition-all duration-300">Бесплатная встреча</a>
+        </nav>
     </header>
 
     <main>
@@ -73,7 +87,8 @@
                     </a>
                 </div>
                 <div class="relative h-96 lg:h-full">
-                    <img src="https://images.unsplash.com/photo-1541535650826-17c345b13813?q=80&w=1964&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x700/F5F1EB/D6A3B1?text=🌿'" alt="[Абстрактное изображение женщины в гармонии с природой]" class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-80">
+                    <!-- Заменено изображение на тематическое -->
+                    <img src="https://loremflickr.com/600/700/women,group,support,tea,circle,cozy?lock=1" alt="Группа девушек в кругу на мягких креслах, общаются, пьют чай, атмосфера поддержки и принятия" class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-80">
                 </div>
             </div>
         </section>
@@ -111,7 +126,7 @@
                         <p>Для женщин в переходных состояниях, которые понимают: «что-то надо менять, но что именно — неясно».</p>
                     </div>
                 </div>
-                 <div class="mt-8 text-center text-stone-600 italic">
+                   <div class="mt-8 text-center text-stone-600 italic">
                     <p>Это не обязательно “плохой период” — иногда всё внешне нормально, но внутри уже давно тишина или крик.</p>
                 </div>
             </div>
@@ -152,7 +167,8 @@
                         </ul>
                     </div>
                     <div class="flex justify-center">
-                        <img src="https://images.unsplash.com/photo-1502228552837-a72240091b61?q=80&w=1936&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/500x600/F5F1EB/D6A3B1?text=?'" alt="[Женщина, обретающая спокойствие]" class="rounded-3xl shadow-lg w-full max-w-sm">
+                        <!-- Сгенерированное изображение по теме -->
+                        <img src="https://loremflickr.com/500/600/meditation,harmony,calm,nature,woman" alt="[Женщина, обретающая спокойствие]" class="rounded-3xl shadow-lg w-full max-w-sm">
                     </div>
                 </div>
             </div>
@@ -165,7 +181,7 @@
                 <p class="mt-4 text-lg text-stone-600">Первый шаг — это доверие. Поэтому я приглашаю вас на бесплатную 15-минутную встречу-знакомство. Мы поговорим, вы сможете задать любые вопросы и почувствовать, подходит ли вам моё бережное поле. Это ни к чему не обязывает.</p>
                 
                 <div class="mt-8 max-w-lg mx-auto" x-show="!submitted">
-                     <form @submit.prevent="submitted = true" class="space-y-4">
+                    <form @submit.prevent="submitted = true" class="space-y-4">
                         <div>
                             <label for="name-call" class="sr-only">Имя</label>
                             <input id="name-call" type="text" placeholder="Ваше имя" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none">
@@ -177,7 +193,7 @@
                         <button type="submit" class="w-full bg-gentle-green text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">Записаться на звонок-знакомство</button>
                     </form>
                 </div>
-                 <div x-show="submitted" x-cloak class="mt-8 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg max-w-lg mx-auto">
+                   <div x-show="submitted" x-cloak class="mt-8 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg max-w-lg mx-auto">
                     <p class="font-bold">Прекрасно!</p>
                     <p>Спасибо за ваше доверие. Я свяжусь с вами в Telegram, чтобы договориться об удобном времени для звонка.</p>
                 </div>
@@ -189,7 +205,8 @@
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-3 gap-10 items-center">
                     <div class="lg:col-span-1 flex justify-center">
-                        <img src="https://i.ibb.co/L5kL9b4/photo-2025-06-11-17-37-50.jpg" alt="[Портрет ведущей группы]" class="rounded-full w-64 h-64 object-cover shadow-xl">
+                        <!-- Заменен портрет ведущей на нарисованный -->
+                        <img src="https://loremflickr.com/600/600/portrait,woman,illustration,art?lock=2" alt="Нарисованный портрет ведущей группы" class="rounded-full w-64 h-64 object-cover shadow-xl">
                     </div>
                     <div class="lg:col-span-2">
                         <h2 class="text-3xl font-bold">Ваша ведущая и проводник</h2>
@@ -203,7 +220,7 @@
         <!-- ===== FORMAT & PRICE SECTION ===== -->
         <section id="format" class="py-20 bg-white" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
             <div class="container mx-auto px-6">
-                 <div class="text-center max-w-3xl mx-auto">
+                   <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-3xl lg:text-4xl font-bold">Как проходят наши встречи?</h2>
                 </div>
                 <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -220,7 +237,7 @@
                     <h3 class="text-2xl font-bold">Стоимость участия</h3>
                     <p class="text-4xl font-bold my-4 text-accent-rose">8000 ₽</p>
                     <p class="text-stone-600">за весь двухмесячный курс (8 встреч). Возможна оплата по частям. Место в группе бронируется по предоплате.</p>
-                     <a href="#free-call" class="mt-6 inline-block bg-gentle-green text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-all">Занять своё место в группе</a>
+                    <a href="#free-call" class="mt-6 inline-block bg-gentle-green text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-all">Занять своё место в группе</a>
                 </div>
             </div>
         </section>
