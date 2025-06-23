@@ -52,7 +52,7 @@
 
     <!-- ===== HEADER ===== -->
     <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-semibold">Точка опоры <span class="text-accent-rose">внутри</span></h1>
             <nav class="hidden md:flex space-x-6 text-sm">
                 <a href="#for-whom" class="hover:text-accent-rose transition-colors">Для кого</a>
@@ -80,13 +80,13 @@
 
     <main>
         <!-- ===== HERO SECTION ===== -->
-        <section class="pt-32 pb-20 relative overflow-hidden">
-            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+        <section class="pt-32 pb-16 sm:pb-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
                 <div class="text-center lg:text-left z-10">
-                    <!-- Заголовок, размер которого адаптируется от 3xl на мобильных до 5xl на больших экранах -->
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">Терапевтическая группа самопознания</h2>
-                    <p class="mt-6 text-base sm:text-lg text-stone-600"> Это пространство для женщин, которые устали быть сильными, удобными и правильными. Место силы, где можно замедлиться и вернуть себе внутреннюю устойчивость — через честный контакт, мягкое исследование и поддержку других женщин.</p>
-                    <a href="#free-call" class="mt-8 inline-block bg-gentle-green text-white font-bold px-8 py-4 rounded-full text-base sm:text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+                    <!-- Заголовок, размер которого адаптируется от 2xl на мобильных до 5xl на больших экранах -->
+                    <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight">Терапевтическая группа самопознания</h2>
+                    <p class="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-stone-600"> Это пространство для женщин, которые устали быть сильными, удобными и правильными. Место силы, где можно замедлиться и вернуть себе внутреннюю устойчивость — через честный контакт, мягкое исследование и поддержку других женщин.</p>
+                    <a href="#free-call" class="mt-6 sm:mt-8 inline-block bg-gentle-green text-white font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
                         Записаться на 15-минутную встречу-знакомство (бесплатно)
                     </a>
                 </div>
@@ -99,56 +99,56 @@
 
         <!-- ===== FOR WHOM SECTION ===== -->
         <section id="for-whom" class="py-16 sm:py-20 bg-soft-beige" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold">🌿 Для кого эта группа?</h2>
-                    <p class="mt-4 text-base sm:text-lg text-stone-600">Если что-то из этого отзывается в вас — это пространство может стать вашим местом силы.</p>
+                    <p class="mt-4 text-sm sm:text-base md:text-lg text-stone-600">Если что-то из этого отзывается в вас — это пространство может стать вашим местом силы.</p>
                 </div>
-                <div class="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     <!-- Item -->
-                    <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm">
-                        <p class="text-base">Для женщин, кто все время в заботе о других, но все реже слышат себя.</p>
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm">
+                        <p class="text-sm sm:text-base">Для женщин, кто все время в заботе о других, но все реже слышат себя.</p>
                     </div>
                     <!-- Item -->
-                    <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm">
-                        <p class="text-base">Для тех, кто чувствует усталость, тревожность и раздражение, не понимая, куда исчезает энергия.</p>
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm">
+                        <p class="text-sm sm:text-base">Для тех, кто чувствует усталость, тревожность и раздражение, не понимая, куда исчезает энергия.</p>
                     </div>
                     <!-- Item -->
-                    <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm">
-                        <p class="text-base">Для тех, у кого всё внешне правильно, но в глубине — ощущение одиночества и внутренней пустоты.</p>
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm">
+                        <p class="text-sm sm:text-base">Для тех, у кого всё внешне правильно, но в глубине — ощущение одиночества и внутренней пустоты.</p>
                     </div>
                     <!-- Item -->
-                    <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm">
-                        <p class="text-base">Для мам, которые стараются быть лучшими, но боятся передать ребёнку свою тревогу, усталость или внутреннюю нестабильность.</p>
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm">
+                        <p class="text-sm sm:text-base">Для мам, которые стараются быть лучшими, но боятся передать ребёнку свою тревогу, усталость или внутреннюю нестабильность.</p>
                     </div>
                     <!-- Item -->
-                    <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm">
-                        <p class="text-base">Для тех, кто живет в другой стране, и потерял ощущение “своего” и “себя” в новой среде.</p>
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm">
+                        <p class="text-sm sm:text-base">Для тех, кто живет в другой стране, и потерял ощущение “своего” и “себя” в новой среде.</p>
                     </div>
                      <!-- Item -->
-                    <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm">
-                        <p class="text-base">Для женщин в переходных состояниях, которые понимают: «что-то надо менять, но что именно и как начать — неясно».</p>
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm">
+                        <p class="text-sm sm:text-base">Для женщин в переходных состояниях, которые понимают: «что-то надо менять, но что именно и как начать — неясно».</p>
                     </div>
                 </div>
                    <div class="mt-6 sm:mt-8 text-center text-stone-600 italic">
-                    <p class="text-sm sm:text-base">Это не обязательно “плохой период” — иногда всё внешне нормально, но что-то внутри уже давно требует внимания.</p>
+                    <p class="text-xs sm:text-sm">Это не обязательно “плохой период” — иногда всё внешне нормально, но что-то внутри уже давно требует внимания.</p>
                 </div>
             </div>
         </section>
 
         <!-- ===== CTA FORM 1 ===== -->
         <section id="cta-1" class="py-16 bg-white" x-data="{ submitted: false }">
-            <div class="container mx-auto px-6 text-center max-w-2xl">
+            <div class="container mx-auto px-4 sm:px-6 text-center max-w-2xl">
                 <div x-show="!submitted">
-                    <h3 class="text-2xl font-bold">Узнайте больше о группе</h3>
-                    <p class="mt-2 text-stone-600">Оставьте свои контакты, и мы свяжемся с вами, чтобы рассказать подробности, ответить на вопросы и помочь понять, подходит ли вам этот формат.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold">Узнайте больше о группе</h3>
+                    <p class="mt-2 text-sm text-stone-600">Оставьте свои контакты, и мы свяжемся с вами, чтобы рассказать подробности, ответить на вопросы и помочь понять, подходит ли вам этот формат.</p>
                     <form @submit.prevent="submitted = true" class="mt-6 flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                        <input type="text" placeholder="Ваше имя" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-base">
-                        <input type="text" placeholder="Ваш Telegram (@username)" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-base">
-                        <button type="submit" class="w-full sm:w-auto bg-gentle-green text-white font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors text-base">Отправить</button>
+                        <input type="text" placeholder="Ваше имя" required class="w-full px-4 py-2 sm:px-5 sm:py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-sm sm:text-base">
+                        <input type="text" placeholder="Ваш Telegram (@username)" required class="w-full px-4 py-2 sm:px-5 sm:py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-sm sm:text-base">
+                        <button type="submit" class="w-full sm:w-auto bg-gentle-green text-white font-semibold px-5 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-opacity-90 transition-colors text-sm sm:text-base">Отправить</button>
                     </form>
                     <!-- Фраза под кнопкой формы записи -->
-                    <p class="text-xs sm:text-sm text-stone-500 mt-4">
+                    <p class="text-xs sm:text-sm md:text-base text-stone-500 mt-4">
                         🔒 Нажимая «Отправить», вы соглашаетесь с <a href="#privacy-policy" class="text-gentle-green hover:underline">политикой обработки персональных данных</a> и подтверждаете осознанность вашего обращения.
                     </p>
                 </div>
@@ -161,11 +161,11 @@
         
         <!-- ===== RESULTS SECTION ===== -->
         <section id="results" class="py-16 sm:py-20 bg-soft-beige" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                     <div>
                         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold">🌱 Что даёт участие в группе?</h2>
-                        <ul class="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-base sm:text-lg text-stone-700">
+                        <ul class="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg text-stone-700">
                             <li class="flex items-start"><span class="text-gentle-green mr-2 sm:mr-3 mt-1">✔</span><span>Пространство, где тебя не оценивают, не учат и не торопят.</span></li>
                             <li class="flex items-start"><span class="text-gentle-green mr-2 sm:mr-3 mt-1">✔</span><span>Возможность почувствовать себя — без давления и роли “надо”.</span></li>
                             <li class="flex items-start"><span class="text-gentle-green mr-2 sm:mr-3 mt-1">✔</span><span>Поддержку и мягкий контакт с другими женщинами.</span></li>
@@ -174,7 +174,7 @@
                             <li class="flex items-start"><span class="text-gentle-green mr-2 sm:mr-3 mt-1">✔</span><span>Внутренняя устойчивость и тёплое знание: “Со мной всё в порядке”.</span></li>
                         </ul>
                         <!-- Начало нового абзаца -->
-                        <p class="mt-6 text-base sm:text-lg text-stone-700">
+                        <p class="mt-6 text-sm sm:text-base md:text-lg text-stone-700">
                             Вы можете прийти в группу с конкретным запросом: научиться говорить «нет» без тревоги, перестать обесценивать себя, понять, где ваши желания, а где — чужие ожидания. Сложности в отношениях, страх быть собой, усталость от роли «хорошей» — это тоже может стать точкой входа.
                             Но даже если чёткого запроса нет — это не препятствие. Иногда достаточно внутреннего отклика: «мне просто хочется остановиться и наконец услышать себя».
                         </p>
@@ -190,24 +190,24 @@
 
         <!-- ===== FREE CALL SECTION ===== -->
         <section id="free-call" class="py-16 sm:py-20 bg-white" x-data="{ submitted: false }">
-            <div class="container mx-auto px-6 text-center max-w-3xl">
+            <div class="container mx-auto px-4 sm:px-6 text-center max-w-3xl">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold">Познакомьтесь с ведущей и группой</h2>
-                <p class="mt-4 text-base sm:text-lg text-stone-600">Первый шаг — это доверие. Поэтому я приглашаю вас на бесплатную 15-минутную встречу-знакомство. Мы поговорим, вы сможете задать любые вопросы и почувствовать, подойдет ли вам группа. Это ни к чему не обязывает.</p>
+                <p class="mt-4 text-sm sm:text-base md:text-lg text-stone-600">Первый шаг — это доверие. Поэтому я приглашаю вас на бесплатную 15-минутную встречу-знакомство. Мы поговорим, вы сможете задать любые вопросы и почувствовать, подойдет ли вам группа. Это ни к чему не обязывает.</p>
                 
                 <div class="mt-8 max-w-lg mx-auto" x-show="!submitted">
                     <form @submit.prevent="submitted = true" class="space-y-4">
                         <div>
                             <label for="name-call" class="sr-only">Имя</label>
-                            <input id="name-call" type="text" placeholder="Ваше имя" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-base">
+                            <input id="name-call" type="text" placeholder="Ваше имя" required class="w-full px-4 py-2 sm:px-5 sm:py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-sm sm:text-base">
                         </div>
                         <div>
                            <label for="tg-call" class="sr-only">Telegram</label>
-                           <input id="tg-call" type="text" placeholder="Ваш Telegram (@username)" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-base">
+                           <input id="tg-call" type="text" placeholder="Ваш Telegram (@username)" required class="w-full px-4 py-2 sm:px-5 sm:py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-sm sm:text-base">
                         </div>
-                        <button type="submit" class="w-full bg-gentle-green text-white font-bold px-8 py-4 rounded-full text-base sm:text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">Записаться на звонок-знакомство</button>
+                        <button type="submit" class="w-full bg-gentle-green text-white font-bold px-5 py-2 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">Записаться на звонок-знакомство</button>
                     </form>
                     <!-- Фраза под кнопкой формы записи -->
-                    <p class="text-xs sm:text-sm text-stone-500 mt-4">
+                    <p class="text-xs sm:text-sm md:text-base text-stone-500 mt-4">
                         🔒 Нажимая «Записаться на звонок-знакомство», вы соглашаетесь с <a href="#privacy-policy" class="text-gentle-green hover:underline">политикой обработки персональных данных</a> и подтверждаете осознанность вашего обращения.
                     </p>
                 </div>
@@ -220,15 +220,15 @@
         
         <!-- ===== ABOUT ME SECTION ===== -->
         <section id="about-me" class="py-16 sm:py-20 bg-soft-beige" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="grid lg:grid-cols-3 gap-8 sm:gap-10 items-center">
                     <div class="lg:col-span-1 flex justify-center mb-8 lg:mb-0">
                         <!-- Портрет ведущей группы -->
                         <img src="https://github.com/Mama-Oceana/MamaO-Group1/blob/main/photo_2025-05-23_07-33-21.jpg?raw=true" alt="[Изображение: портрет ведущей группы]" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover shadow-xl">
                     </div>
                     <div class="lg:col-span-2">
-                        <h2 class="text-2xl sm:text-3xl font-bold">Ваша ведущая</h2>
-                        <p class="mt-4 text-base sm:text-lg text-stone-700">Здравствуйте! Я — Марина Фоменко, дипломированный психолог и игропрактик, более 3 лет сопровождаю женщин в поиске опоры внутри себя.
+                        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Ваша ведущая</h2>
+                        <p class="mt-4 text-sm sm:text-base md:text-lg text-stone-700">Здравствуйте! Я — Марина Фоменко, дипломированный психолог и игропрактик, более 3 лет сопровождаю женщин в поиске опоры внутри себя.
 
 В своей работе я опираюсь на принципы психоаналитически ориентированной терапии: мы говорим о чувствах и исследуем их корни, чтобы освободить вас от старых сценариев и вернуть внутреннюю свободу быть собой.
 
@@ -243,25 +243,25 @@
 
         <!-- ===== FORMAT & PRICE SECTION ===== -->
         <section id="format" class="py-16 sm:py-20 bg-white" x-data="{ isVisible: false }" x-intersect.once="isVisible = true" :class="isVisible ? 'is-visible' : ''" class="fade-in-up">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6">
                    <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold">Как проходят наши встречи?</h2>
                 </div>
-                <div class="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
+                <div class="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
                     <!-- Item -->
-                    <div class="p-4"><div class="bg-soft-beige rounded-2xl p-5 sm:p-6 h-full"><h3 class="font-bold text-lg sm:text-xl mb-2">Онлайн</h3><p class="text-base">Встречи в Zoom с видео и звуком, 1 раз в неделю по 1,5 часа.</p></div></div>
+                    <div class="p-4"><div class="bg-soft-beige rounded-2xl p-4 sm:p-5 h-full"><h3 class="font-bold text-base sm:text-lg mb-2">Онлайн</h3><p class="text-sm sm:text-base">Встречи в Zoom с видео и звуком, 1 раз в неделю по 1,5 часа.</p></div></div>
                     <!-- Item -->
-                    <div class="p-4"><div class="bg-soft-beige rounded-2xl p-5 sm:p-6 h-full"><h3 class="font-bold text-lg sm:text-xl mb-2">Малая группа</h3><p class="text-base">До 6 участниц для создания безопасного и доверительного пространства.</p></div></div>
+                    <div class="p-4"><div class="bg-soft-beige rounded-2xl p-4 sm:p-5 h-full"><h3 class="font-bold text-base sm:text-lg mb-2">Малая группа</h3><p class="text-sm sm:text-base">До 6 участниц для создания безопасного и доверительного пространства.</p></div></div>
                     <!-- Item -->
-                    <div class="p-4"><div class="bg-soft-beige rounded-2xl p-5 sm:p-6 h-full"><h3 class="font-bold text-lg sm:text-xl mb-2">Поддержка</h3><p class="text-base">Закрытый Telegram-канал с практиками, медитациями и метафорическими картами.</p></div></div>
+                    <div class="p-4"><div class="bg-soft-beige rounded-2xl p-4 sm:p-5 h-full"><h3 class="font-bold text-base sm:text-lg mb-2">Поддержка</h3><p class="text-sm sm:text-base">Закрытый Telegram-канал с практиками, медитациями и метафорическими картами.</p></div></div>
                     <!-- Item -->
-                    <div class="p-4"><div class="bg-soft-beige rounded-2xl p-5 sm:p-6 h-full"><h3 class="font-bold text-lg sm:text-xl mb-2">Длительность</h3><p class="text-base">2 месяца бережной и глубокой работы (8 встреч).</p></div></div>
+                    <div class="p-4"><div class="bg-soft-beige rounded-2xl p-4 sm:p-5 h-full"><h3 class="font-bold text-base sm:text-lg mb-2">Длительность</h3><p class="text-sm sm:text-base">2 месяца бережной и глубокой работы (8 встреч).</p></div></div>
                 </div>
-                <div class="mt-14 sm:mt-16 text-center max-w-2xl mx-auto">
+                <div class="mt-12 sm:mt-16 text-center max-w-2xl mx-auto">
                     <h3 class="text-xl sm:text-2xl font-bold">Стоимость участия</h3>
                     <p class="text-3xl sm:text-4xl font-bold my-3 sm:my-4 text-accent-rose">8000 ₽</p>
                     <p class="text-sm sm:text-base text-stone-600">за весь двухмесячный курс (8 встреч). Возможна оплата по частям. Место в группе бронируется по предоплате.</p>
-                    <a href="#free-call" class="mt-6 inline-block bg-gentle-green text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-all text-base">Занять своё место в группе</a>
+                    <a href="#free-call" class="mt-6 inline-block bg-gentle-green text-white font-semibold px-6 py-3 sm:px-8 sm:py-3 rounded-full hover:bg-opacity-90 transition-all text-sm sm:text-base">Занять своё место в группе</a>
                 </div>
             </div>
         </section>
@@ -269,7 +269,7 @@
         <!-- ===== DISCLAIMER SECTION ===== -->
         <!-- Дисклеймер размещен сразу после секции "Формат и стоимость" -->
         <section class="bg-soft-beige py-6 sm:py-8">
-            <div class="container mx-auto px-6 text-center max-w-3xl">
+            <div class="container mx-auto px-4 sm:px-6 text-center max-w-3xl">
                 <p class="text-xs sm:text-sm text-stone-600 italic">
                     ⚠️ Участие в группе не является медицинской, психиатрической или экстренной психологической помощью. Это пространство психологической поддержки и самопознания, не заменяющее индивидуальную терапию или лечение. При наличии острых состояний рекомендуется обратиться к специалистам соответствующего профиля.
                 </p>
@@ -280,7 +280,7 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="bg-soft-beige py-6 sm:py-8">
-        <div class="container mx-auto px-6 text-center text-stone-500">
+        <div class="container mx-auto px-4 sm:px-6 text-center text-stone-500">
             <p class="text-sm">&copy; <span id="year"></span> Фоменко Марина. Все права защищены.</p>
             <p class="text-xs mt-1 sm:mt-2">Этот сайт не является публичной офертой.</p>
             <!-- Блок с мини-политикой конфиденциальности в футере -->
