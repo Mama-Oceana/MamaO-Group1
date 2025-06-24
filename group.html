@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600&display=swap" rel="stylesheet">
 
     <!-- Alpine.js for interactivity -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
     <style>
         html {
@@ -111,24 +111,18 @@
         </section>
 
         <!-- ===== FOR WHOM SECTION ===== -->
-        <section id="for-whom" class="py-16 sm:py-20 bg-soft-beige" x-data x-intersect:enter.once="$el.classList.add('is-visible')" class="fade-in-up">
-            <div class="container mx-auto px-4 sm:px-6">
+        <section id="for-whom" class="py-16 sm:py-20 bg-soft-beige">
+            <div class="container mx-auto px-4 sm:px-6" x-data x-intersect:enter.once="$el.classList.add('is-visible')" class="fade-in-up">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-3xl sm:text-4xl font-bold">🌿 Для кого эта группа?</h2>
                     <p class="mt-4 text-base md:text-lg text-stone-600">Если что-то из этого отзывается в вас — это пространство может стать вашим местом силы.</p>
                 </div>
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <!-- Item -->
                     <div class="bg-white p-5 rounded-2xl shadow-sm"><p class="text-base">Для женщин, кто все время в заботе о других, но все реже слышат себя.</p></div>
-                    <!-- Item -->
                     <div class="bg-white p-5 rounded-2xl shadow-sm"><p class="text-base">Для тех, кто чувствует усталость, тревожность и раздражение, не понимая, куда исчезает энергия.</p></div>
-                    <!-- Item -->
                     <div class="bg-white p-5 rounded-2xl shadow-sm"><p class="text-base">Для тех, у кого всё внешне правильно, но в глубине — ощущение одиночества и внутренней пустоты.</p></div>
-                    <!-- Item -->
                     <div class="bg-white p-5 rounded-2xl shadow-sm"><p class="text-base">Для мам, которые стараются быть лучшими, но боятся передать ребёнку свою тревогу, усталость или внутреннюю нестабильность.</p></div>
-                    <!-- Item -->
                     <div class="bg-white p-5 rounded-2xl shadow-sm"><p class="text-base">Для тех, кто живет в другой стране, и потерял ощущение “своего” и “себя” в новой среде.</p></div>
-                    <!-- Item -->
                     <div class="bg-white p-5 rounded-2xl shadow-sm"><p class="text-base">Для женщин в переходных состояниях, которые понимают: «что-то надо менять, но что именно и как начать — неясно».</p></div>
                 </div>
                 <div class="mt-8 text-center text-stone-600 italic">
@@ -138,8 +132,8 @@
         </section>
         
         <!-- ===== RESULTS SECTION ===== -->
-        <section id="results" class="py-16 sm:py-20 bg-white" x-data x-intersect:enter.once="$el.classList.add('is-visible')" class="fade-in-up">
-            <div class="container mx-auto px-4 sm:px-6">
+        <section id="results" class="py-16 sm:py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6" x-data x-intersect:enter.once="$el.classList.add('is-visible')" class="fade-in-up">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="order-2 lg:order-1">
                         <h2 class="text-3xl sm:text-4xl font-bold">🌱 Что даёт участие в группе?</h2>
@@ -160,38 +154,45 @@
             </div>
         </section>
 
-        <!-- ===== FREE CALL SECTION / MAIN CTA ===== -->
-        <section id="free-call" class="py-16 sm:py-20 bg-soft-beige" x-data="{ submitted: false }">
+        <!-- ===== FREE CALL SECTION / MAIN CTA (WHATSAPP & TELEGRAM INTEGRATION) ===== -->
+        <section id="free-call" class="py-16 sm:py-20 bg-soft-beige">
             <div class="container mx-auto px-4 sm:px-6 text-center max-w-3xl">
                 <h2 class="text-3xl sm:text-4xl font-bold">Познакомьтесь с ведущей и форматом</h2>
-                <p class="mt-4 text-base md:text-lg text-stone-600">Первый шаг — это доверие. Приглашаю вас на бесплатную 15-минутную встречу-знакомство. Мы поговорим, вы сможете задать любые вопросы и почувствовать, подходит ли вам группа. Это ни к чему не обязывает.</p>
+                <p class="mt-4 text-base md:text-lg text-stone-600">Первый шаг — это доверие. Приглашаю вас на бесплатную 15-минутную встречу-знакомство. Просто введите ваше имя и выберите удобный способ для связи.</p>
                 
-                <div class="mt-8 max-w-lg mx-auto" x-show="!submitted">
-                    <form @submit.prevent="submitted = true; setTimeout(() => $el.scrollIntoView({ behavior: 'smooth' }), 100)" class="space-y-4">
+                <div class="mt-8 max-w-lg mx-auto">
+                    <form id="contact-form" onsubmit="return false;" class="space-y-4">
                         <div>
                             <label for="name-call" class="sr-only">Имя</label>
                             <input id="name-call" type="text" placeholder="Ваше имя" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-base transition">
                         </div>
-                        <div>
-                           <label for="tg-call" class="sr-only">Telegram</label>
-                           <input id="tg-call" type="text" placeholder="Ваш Telegram (@username)" required class="w-full px-5 py-3 border border-stone-300 rounded-full focus:ring-2 focus:ring-gentle-green outline-none text-base transition">
+                        <div class="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
+                           <!-- WhatsApp Button -->
+                            <button id="whatsapp-btn" type="button" class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-green-500 text-white font-bold py-3 px-6 rounded-full text-base hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                            </button>
+                            <!-- Telegram Button -->
+                            <button id="telegram-btn" type="button" class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-sky-500 text-white font-bold py-3 px-6 rounded-full text-base hover:bg-sky-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.15 8.15 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.42 1.42 0 0 0-.427-1.16A1.11 1.11 0 0 0 13.11.45c-1.895-.356-3.574.71-4.823 1.506z"/>
+                                </svg>
+                                <span>Telegram</span>
+                            </button>
                         </div>
-                        <button type="submit" class="w-full bg-gentle-green text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">Записаться на звонок-знакомство</button>
                     </form>
                     <p class="text-xs text-stone-500 mt-4 px-4">
                         🔒 Нажимая на кнопку, вы соглашаетесь с <a href="#privacy-policy" @click.prevent="document.getElementById('privacy-policy').scrollIntoView({behavior:'smooth'})" class="text-gentle-green hover:underline">политикой обработки данных</a>.
                     </p>
                 </div>
-                <div x-show="submitted" x-cloak class="mt-8 bg-green-100 border border-green-200 text-green-800 p-6 rounded-2xl max-w-lg mx-auto text-left">
-                    <p class="font-bold text-lg">Прекрасно!</p>
-                    <p class="text-base mt-2">Спасибо за ваше доверие. Я свяжусь с вами в Telegram в ближайшее время, чтобы договориться об удобном времени для звонка.</p>
-                </div>
             </div>
         </section>
         
         <!-- ===== ABOUT ME SECTION ===== -->
-        <section id="about-me" class="py-16 sm:py-20 bg-white" x-data x-intersect:enter.once="$el.classList.add('is-visible')" class="fade-in-up">
-            <div class="container mx-auto px-4 sm:px-6">
+        <section id="about-me" class="py-16 sm:py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6" x-data x-intersect:enter.once="$el.classList.add('is-visible')" class="fade-in-up">
                 <div class="grid lg:grid-cols-3 gap-8 sm:gap-12 items-center">
                     <div class="lg:col-span-1 flex justify-center">
                         <img src="https://github.com/Mama-Oceana/MamaO-Group1/blob/main/photo_2025-05-23_07-33-21.jpg?raw=true" alt="[Изображение: портрет ведущей группы]" class="rounded-full w-56 h-56 sm:w-64 sm:h-64 object-cover shadow-xl">
@@ -207,19 +208,15 @@
         </section>
 
         <!-- ===== FORMAT & PRICE SECTION ===== -->
-        <section id="format" class="py-16 sm:py-20 bg-soft-beige" x-data x-intersect:enter.once="$el.classList.add('is-visible')" class="fade-in-up">
-            <div class="container mx-auto px-4 sm:px-6">
+        <section id="format" class="py-16 sm:py-20 bg-soft-beige">
+            <div class="container mx-auto px-4 sm:px-6" x-data x-intersect:enter.once="$el.classList.add('is-visible')" class="fade-in-up">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-3xl sm:text-4xl font-bold">Как проходят наши встречи?</h2>
                 </div>
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                    <!-- Item -->
                     <div class="bg-white rounded-2xl p-6 h-full shadow-sm"><h3 class="font-bold text-lg mb-2">Онлайн</h3><p class="text-base">Встречи в Zoom с видео и звуком, 1 раз в неделю по 1,5 часа.</p></div>
-                    <!-- Item -->
                     <div class="bg-white rounded-2xl p-6 h-full shadow-sm"><h3 class="font-bold text-lg mb-2">Малая группа</h3><p class="text-base">До 6 участниц для создания безопасного и доверительного пространства.</p></div>
-                    <!-- Item -->
                     <div class="bg-white rounded-2xl p-6 h-full shadow-sm"><h3 class="font-bold text-lg mb-2">Поддержка</h3><p class="text-base">Закрытый Telegram-канал с практиками и поддержкой между встречами.</p></div>
-                    <!-- Item -->
                     <div class="bg-white rounded-2xl p-6 h-full shadow-sm"><h3 class="font-bold text-lg mb-2">Длительность</h3><p class="text-base">2 месяца бережной и глубокой работы (8 встреч).</p></div>
                 </div>
                 <div class="mt-16 text-center max-w-2xl mx-auto">
@@ -247,7 +244,7 @@
             <div id="privacy-policy" class="max-w-3xl mx-auto mb-10 text-left sm:text-center">
                 <h4 class="text-base font-bold text-stone-600 mb-2">Политика обработки персональных данных</h4>
                 <p class="text-sm">
-                    Мы уважаем вашу приватность. Личные данные, указанные при заполнении формы (имя, Telegram), используются исключительно для связи с вами по поводу участия в терапевтической группе. Мы не передаём ваши данные третьим лицам и не используем их в рекламных рассылках.
+                    Мы уважаем вашу приватность. Личные данные, указанные при заполнении формы (имя), используются исключительно для связи с вами по поводу участия в терапевтической группе. Мы не передаём ваши данные третьим лицам и не используем их в рекламных рассылках.
                 </p>
             </div>
             <p class="text-sm">&copy; <span id="year"></span> Фоменко Марина. Все права защищены.</p>
@@ -256,23 +253,70 @@
     </footer>
 
     <script>
-        document.addEventListener('alpine:init', () => {
-            // Directive for scroll animations
-            Alpine.directive('intersect', (el, { expression }) => {
-                const observer = new IntersectionObserver(entries => {
-                    if (entries[0].isIntersecting) {
-                        // Use a safe way to evaluate the expression if needed,
-                        // but here we just add a class.
-                        el.classList.add('is-visible');
-                        observer.unobserve(el);
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in the footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Contact form handler
+            const nameInput = document.getElementById('name-call');
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+            const telegramBtn = document.getElementById('telegram-btn');
+
+            const whatsAppNumber = '5548991553999';
+            const telegramUsername = 'mama_oceana'; // Corrected Telegram username
+
+            function validateName() {
+                const name = nameInput.value.trim();
+                if (!name) {
+                    nameInput.focus();
+                    nameInput.classList.add('border-red-500', 'focus:ring-red-500');
+                    nameInput.placeholder = 'Пожалуйста, введите ваше имя';
+                    setTimeout(() => {
+                        nameInput.classList.remove('border-red-500', 'focus:ring-red-500');
+                        nameInput.placeholder = 'Ваше имя';
+                    }, 2500);
+                    return false;
+                }
+                return name;
+            }
+
+            if(whatsappBtn) {
+                whatsappBtn.addEventListener('click', function() {
+                    const name = validateName();
+                    if (!name) return;
+                    
+                    let message = `Здравствуйте! Хочу записаться на встречу-знакомство для группы "Точка опоры внутри".\n\nМое имя: ${name}.`;
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappURL = `https://wa.me/${whatsAppNumber}?text=${encodedMessage}`;
+                    window.open(whatsappURL, '_blank').focus();
+                });
+            }
+
+            if(telegramBtn) {
+                telegramBtn.addEventListener('click', function() {
+                    const name = validateName();
+                    if (!name) return;
+                    
+                    // This will open a chat with the specified user. The user can then introduce themselves.
+                    const telegramURL = `https://t.me/${telegramUsername}`;
+                    window.open(telegramURL, '_blank').focus();
+                });
+            }
+
+            // Scroll animations setup
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
                     }
-                }, { threshold: 0.1 });
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
                 observer.observe(el);
             });
         });
-        
-        // Set current year in the footer
-        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
